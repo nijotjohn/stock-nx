@@ -1,0 +1,35 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "block-wc": "libs/block-wc",
+    "block-wc-e2e": {
+      "root": "apps/block-wc-e2e",
+      "sourceRoot": "apps/block-wc-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/block-wc-e2e/cypress.json",
+            "devServerTarget": "block-wc:storybook"
+          },
+          "configurations": {
+            "ci": {
+              "devServerTarget": "block-wc:storybook:ci"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/block-wc-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["block-wc"]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@stock-wc/block-wc": ["libs/block-wc/src/index.ts"],
+      "@stock/blocks": ["dist/libs/block-wc"],
+      "@stock/blocks/loader": ["dist/libs/block-wc/loader"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
